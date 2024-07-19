@@ -6,6 +6,7 @@ export default async function CapitalRasing() {
   const url = env["WIDGET_URL"]; 
 
   console.log('url is, ', url);
+  console.log(Deno.env.get('WIDGET_URL'));
 
 
   return <div class="space-y-4">
