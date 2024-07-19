@@ -1,13 +1,11 @@
 import Widget from "../../islands/Widget.tsx";
-import { load } from "$std/dotenv";
 
-export default async function CapitalRasing() {
-  const env = await load();
-  const url = env["WIDGET_URL"]; 
+export default function CapitalRasing() {
+  const url = Deno.env.get('WIDGET_URL'); 
 
-  console.log('url is, ', url);
-  console.log(Deno.env.get('WIDGET_URL'));
-
+  if (!url) {
+    throw new Deno.errors.NotFound(); 
+  }
 
   return <div class="space-y-4">
     <div class="w-screen h-[200px] relative">
