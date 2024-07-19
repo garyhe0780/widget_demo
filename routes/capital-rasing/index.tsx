@@ -5,6 +5,7 @@ export default async function CapitalRasing() {
   const env = await load();
   const url = env["WIDGET_URL"]; 
 
+  console.log('url is, ', url);
 
 
   return <div class="space-y-4">
